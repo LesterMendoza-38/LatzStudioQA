@@ -1,1 +1,85 @@
-<h1> GitHub Pages test<h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latz Studio | Maquillaje y Peinados</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="img/Logo_Latz_aztualizado.png" alt="Logo Latz Studio" class="nav-logo">
+    </div>
+
+    <div class="nav-center">
+      <h1 class="nav-title">Latz Studio</h1>
+    </div>
+
+    <div class="nav-right">
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="#" class="carrito-link">Carrito 🛒 (<span id="contador-carrito">0</span>)</a></li>
+      </ul>
+      <a href="login.html" class="login-btn">Iniciar Sesión</a>
+    </div>
+  </nav>
+
+  <p class="subtitle main-subtitle">Maquillaje & Peinados Profesionales</p>
+
+  <div id="carouselExampleIndicators" class="carousel slide hero-carousel" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="img/CalendarioVIctoriaS.png" alt="Colección Victoria">
+        <div class="carousel-caption d-none d-md-block">
+          <a href="#productos" class="cta-btn">Ver Colección</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="img/ProductosP2.png" alt="Productos Premium">
+        <div class="carousel-caption d-none d-md-block">
+          <a href="#productos" class="cta-btn">Comprar Ahora</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="img/ProductosVarios.png" alt="Belleza Profesional">
+        <div class="carousel-caption d-none d-md-block">
+          <a href="#productos" class="cta-btn">Explorar Más</a>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Siguiente</span>
+    </a>
+  </div>
+</header>
+
+<div class="container mt-5">
+  <p class="subtitle section-title">Artículos de Belleza</p>
+  <main id="productos" class="product-grid"></main>
+</div>
+
+<footer>
+  <p>© 2026 Latz Studio - Todos los derechos reservados</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
