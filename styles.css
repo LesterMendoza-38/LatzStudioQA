@@ -228,3 +228,118 @@ footer {
   font-size: 13px;
   color: var(--text-muted);
 }
+
+/* Botón flotante de WhatsApp */
+.whatsapp-btn {
+    position: fixed;    /* Esto hace que flote */
+    bottom: 30px;       /* Distancia del borde inferior */
+    right: 30px;        /* Distancia del borde derecho */
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;      /* Para que esté siempre al frente */
+    transition: transform 0.3s ease;
+}
+
+/* Botón de WhatsApp Rectangular y Fijo */
+.whatsapp-btn {
+    position: fixed;         /* Lo mantiene fijo aunque el usuario baje */
+    bottom: 20px;            /* Distancia desde abajo */
+    right: 20px;             /* Distancia desde la derecha */
+    background-color: #000;  /* Color negro como en tu ejemplo */
+    color: white;
+    padding: 8px 15px;       /* Tamaño más compacto */
+    border-radius: 8px;      /* Bordes ligeramente redondeados */
+    display: flex;
+    align-items: center;
+    gap: 10px;               /* Espacio entre icono y texto */
+    text-decoration: none;
+    font-size: 14px;         /* Texto pequeño y discreto */
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;           /* Siempre al frente */
+    transition: 0.3s;
+}
+
+/* Estilos para el botón flotante de WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px; /* Tamaño del botón */
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+}
+
+/* AQUÍ CONTROLAS EL TAMAÑO DE LA IMAGEN */
+.whatsapp-btn img {
+    width: 35px; /* Ajusta este valor para que el logo se vea bien dentro del círculo */
+    height: auto;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border: 1px solid var(--primary-color);
+  background: white;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Asegúrate de que tu .product-grid use display: grid como ya lo tienes */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.cta-btn {
+    padding: 15px 35px;
+    background: #000; /* Negro elegante */
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.4s;
+    display: inline-block;
+}
+
+.cta-btn:hover {
+    background: var(--accent-color); /* El tono dorado que ya definiste */
+    color: white;
+    text-decoration: none;
+    transform: translateY(-3px);
+}
+

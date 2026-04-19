@@ -6,17 +6,20 @@ let productos = [];
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
-// 🔹 Cargar backend
+// REEMPLAZA TU FETCH POR ESTE:
 fetch("http://localhost:3000/productos")
   .then(res => res.json())
   .then(data => {
-    productos = productos.concat(data);
+    // EL SIGNO "=" BORRA LO ANTERIOR Y PONE LO NUEVO
+    // EL ".slice(0, 4)" DEJA SOLO LOS PRIMEROS 4
+    productos = data.slice(0, 4); 
     renderProductos();
   })
-  .catch(() => {
+  .catch((err) => {
+    console.error("Error:", err);
     renderProductos();
   });
-
+  
 // 🔹 Render
 function renderProductos() {
   contenedor.innerHTML = "";

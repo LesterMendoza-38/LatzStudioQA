@@ -6,7 +6,7 @@ const { sql, poolPromise } = require("./db"); // Importamos la conexión a SQL S
 const app = express();
 
 // --- Configuración y Middlewares ---
-app.use(cors());
+app.use(cors()); // Esto permite que el celular entre al API
 app.use(express.json()); // Necesario para leer los datos del login
 
 // Hacer que la carpeta /img sea accesible
