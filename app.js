@@ -7,7 +7,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
 // REEMPLAZA TU FETCH POR ESTE:
-fetch("http://localhost:3000/productos")
+fetch("https://latzstudioqa.onrender.com/productos")
   .then(res => res.json())
   .then(data => {
     // EL SIGNO "=" BORRA LO ANTERIOR Y PONE LO NUEVO
