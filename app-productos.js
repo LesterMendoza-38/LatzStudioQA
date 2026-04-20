@@ -2,10 +2,7 @@ let productosTotales = []; // Array para guardar todo el catálogo
 const grid = document.getElementById('grid-productos');
 
 // Antes
-fetch("http://localhost:3000/productos")
-
-// Ahora (con tu IP real)
-fetch("http://192.168.1.15:3000/productos")
+fetch("https://latzstudioqa.onrender.com/productos")
   .then(res => res.json())
   .then(data => {
     // Aquí NO usamos .slice(), queremos el 100% de los datos
