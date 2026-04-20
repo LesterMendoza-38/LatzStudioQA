@@ -1,23 +1,17 @@
-const sql = require("mssql");
+const { Pool } = require('pg');
 
-const config = {
-  user: "root", 
-  password: "TuPasswordSeguro123", // Pon tu contraseña real aquí
-  server: "127.0.0.1", 
-  database: "latz_studio",
-  port: 1433, 
-  options: {
-    encrypt: false, 
-    trustServerCertificate: true 
+// Render te da una URL completa, es más fácil usarla así:
+const connectionString = process.env.DATABASE_URL || 'postgres://postgres:tu_password_local@localhost:5432/latz_studio';
+
+const pool = new Pool({
+  connectionString: connectionString,
+  ssl: {
+    rejectUnauthorized: false // Obligatorio para conexiones seguras en Render
   }
-};
+});
 
-const poolPromise = new sql.ConnectionPool(config)
-  .connect()
-  .then(pool => {
-    console.log("Conectado a SQL Server");
-    return pool;
-  })
-  .catch(err => console.log("Error de conexión: ", err.message));
+pool.on('connect', () => {
+  console.log('✅ Conectado a la base de datos de Render');
+});
 
-module.exports = { sql, poolPromise };
+module.exports = pool;
