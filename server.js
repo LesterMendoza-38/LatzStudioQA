@@ -17,11 +17,12 @@ app.use('/img', express.static(path.join(__dirname, 'img')));
 // Obtener productos para la tienda
 app.get("/productos", async (req, res) => {
   try {
-    const pool = await poolPromise;
-    const result = await pool.request().query("SELECT * FROM productos");
-    res.json(result.recordset);
+    // Agregamos el ORDER BY id para que no se mueva el catálogo
+    const result = await pool.query("SELECT * FROM productos ORDER BY id ASC");
+    res.json(result.rows);
   } catch (error) {
-    res.status(500).json({ error: "Error en el servidor al obtener productos" });
+    console.error(error);
+    res.status(500).send("Error en el servidor");
   }
 });
 
