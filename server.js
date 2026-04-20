@@ -48,7 +48,7 @@ app.post("/login", async (req, res) => {
 });
 
 // --- Iniciar Servidor ---
-const PORT = 3000;
+const port = process.env.PORT || 3000; // Usa el puerto de Render o el 3000 en local
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
   console.log("Conectado a SQL Server 2025");
